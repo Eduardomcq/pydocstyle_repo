@@ -2,23 +2,26 @@ name: Deploy
 
 on:
     push:
-        branches: main
+        branches: [main]
 
 jobs:
     pydocstyle:
         name: pydocstyle
         runs-on: ubuntu-latest
     
-    steps:
-        - name: Copia arquivos
-          uses: actions/checkout@v4
+        steps:
+            - name: Copia arquivos
+              uses: actions/checkout@v4
 
-        - name: Setup python
-          uses: actions/setup-python@v4
+            - name: Setup python
+              uses: actions/setup-python@v4
 
-        - name: install lib
-          run: pip install pydocstyle
+            - name: install lib
+              run: pip install pydocstyle
 
-        - name: executar
-          run: pydocstyle 
+            - name: executar
+              run: pydocstyle 
+           
+
+        
 
